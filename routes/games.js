@@ -22,8 +22,7 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.post("/", (request, response, next) => {
-    queries.create(request.body)
-    .then(game => {
+    queries.create(request.body).then(game => {
         response.status(201).json({game});
     })
     .catch(next);
